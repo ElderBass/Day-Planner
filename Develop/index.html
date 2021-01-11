@@ -19,6 +19,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
     <title>Work Day Scheduler</title>
   </head>
 
@@ -28,11 +29,137 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
-    </div>
+    <div class="container time-block">
+      <div class='row hour' value='9'>
+        <p class='float-left'>9 am</p>
+        <textarea type='text' class='description' id='hourInput'>
+          
+        </textarea>
+        <button type='submit' class='saveBtn'>Save</button>
+      </div>
+      <hr>
+      <div class='row hour' value='10'>
+        <p class='float-left'>10 am</p>
+        <textarea type='text' id='hourInput'></textarea>
+        <button type='submit' class='saveBtn'>Save</button>
+      </div>
+      <hr>
+      <div class='row time-block' value='11'>
+        <p class='float-left'>11 am</p>
+        <textarea type='text' id='hourInput'></textarea>
+        <button type='submit' class='saveBtn'>Save</button>
+      </div>
+      <hr>
+      <div class='row time-block' value='12'>
+        <p class='float-left'>12 pm</p>
+        <textarea type='text' id='hourInput'></textarea>
+        <button type='submit' class='saveBtn'>Save</button>
+      </div>
+      <hr>   <!--Note that these have to be colored based on if they are in the past, present or future! Use preloaded CSS-->
+      <div class='row time-block' value='13'>
+        <p class='float-left'>1 pm</p>
+        <textarea type='text' id='hourInput'></textarea>
+        <button type='submit' class='saveBtn'>Save</button>
+      </div>
+      <hr>
+      <div class='row time-block' value='14'>
+        <p class='float-left'>2 pm</p>
+        <textarea type='text' id='hourInput'></textarea>
+        <button type='submit' class='saveBtn'>Save</button>
+      </div>
+      <hr>
+      <div class='row time-block' value='15'>
+        <p class='float-left'>3 pm</p>
+        <textarea type='text' id='hourInput'></textarea>
+        <button type='submit' class='saveBtn'>Save</button>
+      </div>
+      <hr>
+      <div class='row time-block' value='20'>
+        <p class='float-left'>4 pm</p>
+        <textarea type='text' id='hourInput'></textarea>
+        <button type='submit' class='saveBtn'>Save</button>
+      </div>
+      <hr>
+      <div class='row time-block' value='21'>
+        <p class='float-left'>5 pm</p>
+        <textarea type='text' id='hourInput'></textarea>
+        <button type='submit' class='saveBtn'>Save</button>
+      </div>
+      <hr>
+      <div class='row time-block' value='22'>
+        <p class='float-left'>6 pm</p>
+        <textarea type='text' id='hourInput'></textarea>
+        <button type='submit' class='saveBtn'>Save</button>
+      </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!-- <script src='./Assets\js\script.js'></script> -->
+    <script>
+      var saveButtons = $('.saveBtn');
+      var currentDay = $('#currentDay');
+      var today = moment();
+
+      //console.log(today.toString())
+
+     console.log(parseInt($('.row').attr('value')));
+
+      console.log(parseInt(today.format('HH')));
+      
+      currentDay.append(today.toString());
+
+     // console.log($('.row'));
+
+      var rows = $('.row');
+
+    saveButtons.on('click', saveHourData());
+
+    function saveHourData (){
+      console.log("eventually we'll save this shit to local storage")
+      var userInput = $('#hourInput')
+      var li = $('<li>')
+      localStorage.setItem("input", userInput)
+
+  }
+  //name a function for determining which hours on the planner are in the past, in the future, or the present hour
+  function pastPresentFuture () {
+    //so for each of our classes labeled 'row' (which is every row in the planner), execute the following function:
+    $('.row').each( function() { 
+      //if the integer value (parseInt()) of the 'value' attribute I set for the rows is < the integer value for the current hour (e.g. noon = 12)
+      if ((parseInt($(this).attr('value'))) < (parseInt(today.format('HH')))) {
+        //then for this particular row, we will label it in the past, which changes its formatting
+        $(this).attr('class', 'past');
+      }
+      //if the integer value of the 'value' attr is GREATER than the integer value for the current hour, we add the 'future' class
+      else if (((parseInt($(this).attr('value'))) > (parseInt(today.format('HH'))))) {
+        $(this).attr('class', 'future');
+      }
+      //if the integer value for the current row's value attr is the same as the current hour, we add the 'present' class to 
+      else if (((parseInt($(this).attr('value'))) === (parseInt(today.format('HH'))))) {
+        $(this).attr('class', 'present')
+   } 
+   
+  })
+} 
+//call the above function so it makes the determination of which hours are past/present/future and styles them on the loading of the page
+pastPresentFuture(); 
+/*
+$('div[class="testimonial"]').each(function(index,item){
+    if(parseInt($(item).data('index'))>2){
+        $(item).html('Testimonial '+(index+1)+' by each loop');
+    }
+}); */
+
+  
+//each hour has a 'value' attr with their corresponding hour value (eg 9 am = 900)
+//create array of hours value (e.g. hours = [900, 1000, 1100, etc])
+  //compare the hour value from moment and check it against the rows
+  /* parsInt($('.row'))
+  $('.row').attr('class', 'future')
+  $('.row').attr('class', 'past')
+  $('.row').attr('class', 'present')
+*/
+</script>
+    
   </body>
 </html>
