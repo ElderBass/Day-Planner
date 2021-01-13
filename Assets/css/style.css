@@ -1,0 +1,85 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  align-items: center; /*I added this, but I'm not sure it's even doing anything. */
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px; /*I can't remember if I set this padding or not...*/
+  width:80%;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+}
+
+/*Not sure what this is supposed to be for tbh so I didn't ascribe it to anything in the html
+The page seemed to look fine without it being incorporated so I'm at a loss here.*/
+.description{
+  white-space: pre-wrap;
+}
+
+.time-block{
+  text-align: center;
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto; /*I put in these margins and align-items to try and keep the block div centered on the page. */
+  align-items: center;
+}
+
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid white;;
+ 
+}
+
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px dashed #000000;
+  text-align: right; /* I added this text-alignment to try and matche the gif provided. */
+  padding: 10px;
+  width: 100px; /*I added this to make sure all the hour texts will line up nicely and uniformly */
+}
+
+.past {
+  background-color: #d3d3d3;
+  color: black;
+}
+ /*for past/present/future, I changed the color from white to black to match the gif. The way I have my html
+ and script, it was coloring the text inside the textareas black when they were designated past/present/future
+ and it just didn't look great. Minor hack. */
+.present {
+  background-color: #ff6961;
+  color: black;
+}
+
+.future {
+  background-color: #77dd77;
+  color: black;
+}
+
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06AED5;
+  color: white;
+  padding: 25px; /*I added this padding to widen the buttons a bit and make them look better IMO. */
+}
+
+.saveBtn i:hover {
+  font-size: 20px;
+  transition: all .3s ease-in-out;
+}

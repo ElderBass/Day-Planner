@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./Develop/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <title>Work Day Scheduler</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
+    </header>
+
+    <!--Long story somewhat shorter, I played a guessing game to see which classes from the style.css went where
+    for my planner's rows, textareas, and such, which I think I matched mostly correctly. The whole planner is in one div, 
+    labeled 'time-block', then I created a div for each hourly row (class='row') containing the p element labeling the 
+    hour (class='hour'), the textarea, and the save buttons (class='saveBtn'). For the textareas, I assigned them values and
+    ids that I used in my script.js to match them with the buttons on their rows and to create a unique key in the localStorage
+    to save their text contents within. The values and ids for textareas may have been redundant, but my code worked and I dared
+    not mess with it further and risk retribution.-->
+    <div class="container time-block">
+      <div class='row'>
+        <p class='hour'>9 am</p>
+        <textarea type='text' value='9' id='9'></textarea>
+        <button type='submit' id='9' class='saveBtn'><i class="fas fa-save"></i></button>
+      </div>                                     <!--The above <i> element gives us that fancy floppy disk icon-->
+      
+      <div class='row' >
+        <p class='hour'>10 am</p>
+        <textarea type='text' value='10' id='10'></textarea>
+        <button type='submit' id='10' class='saveBtn'><i class="fas fa-save"></i></button>
+      </div>
+      
+      <div class='row' >
+        <p class='hour'>11 am</p>
+        <textarea type='text'  value='11'id='11'></textarea>
+        <button type='submit'  id='11' class='saveBtn'><i class="fas fa-save"></i></button>
+      </div>
+      
+      <div class='row'>
+        <p class='hour'>12 pm</p>
+        <textarea type='text'  value='12' id='12'></textarea>
+        <button type='submit' id='12' class='saveBtn'><i class="fas fa-save"></i></button>
+      </div>
+       
+      <div class='row' >
+        <p class='hour'>1 pm</p>
+        <textarea type='text' value='13' id='13'></textarea>
+        <button type='submit' id='13' class='saveBtn'><i class="fas fa-save"></i></button>
+      </div>
+      
+      <div class='row' >
+        <p class='hour'>2 pm  </p>
+        <textarea type='text' value='14' id='14'></textarea>
+        <button type='submit' id='14' class='saveBtn'><i class="fas fa-save"></i></button>
+      </div>
+      
+      <div class='row' >
+        <p class='hour'>3 pm</p>
+        <textarea type='text' value='15' id='15'></textarea>
+        <button type='submit' id='15' class='saveBtn'><i class="fas fa-save"></i></button>
+      </div>
+      
+      <div class='row'>
+        <p class='hour'>4 pm</p>
+        <textarea type='text'  value='16' id='16'></textarea>
+        <button type='submit' id='16' class='saveBtn'><i class="fas fa-save"></i></button>
+      </div>
+      
+      <div class='row' >
+        <p class='hour'>5 pm</p>
+        <textarea type='text' value='17' id='17'></textarea>
+        <button type='submit' id='17' class='saveBtn'><i class="fas fa-save"></i></button>
+      </div>
+      
+      <div class='row' >
+        <p class='hour'>6 pm</p>
+        <textarea type='text' value='18' id='18'></textarea>
+        <button type='submit' id='18' class='saveBtn'><i class="fas fa-save"></i></button>
+      </div>
+
+    
+    <script src='./Assets\js\script.js'></script>
+
+  </body>
+</html>
