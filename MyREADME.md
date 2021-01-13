@@ -18,6 +18,25 @@ Another feature of this day planner is color-coordination. Any hour-rows that ar
 
 # Files in Repository
 
-This repository was sort of unique in that style.css file was provided for the coder and needed only a few alterations. This style.css file I moved into the 'css' folder I created inside of the 'Assets' folder. Also in the Assets folder one can find the js folder housing the script.js file, in which lies my jQuery code for the assignment, as well as the provided gif image for how the day planner is supposed to look. I think mine came pretty close. 
+This repository was sort of unique in that style.css file was provided for the coder and needed only a few alterations. This style.css file I moved into the 'css' folder I created inside of the 'Assets' folder. 
+
+Also in the Assets folder one can find the js folder housing the script.js file, in which lies my jQuery code for the assignment, as well as the provided gif image for how the day planner is supposed to look. I think mine came pretty close. I created a gif of my own planner and placed it inside the Assets, too. 
 
 The index.html file is outside of any folder branches, along with the MyREADME file. 
+
+# Links and Gif
+
+GitHub Clone:
+
+https://github.com/ElderBass/Day-Planner.git
+
+
+GitPages Link:
+
+https://elderbass.github.io/Day-Planner/
+
+
+
+Demo of Planner:
+
+![Day Planner Demo Gif](./Assets/day-planner-demo.gif)
